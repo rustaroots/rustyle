@@ -1,6 +1,8 @@
+@import "variables";
+
 // Mixin for grid column width
 @mixin grid-col($span, $columns: $grid-columns) {
-  width: percentage($span / $columns);
+  width: calc($span / $columns);
 }
 
 // Mixin for responsive breakpoints
@@ -42,5 +44,4 @@
 @include generate-color-utilities(text);
 @include generate-color-utilities(bg);
 @include generate-color-utilities(border);
-
 @include hover-focus-colors;

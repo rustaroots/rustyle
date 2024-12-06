@@ -1,7 +1,5 @@
 @import "variables";
 
-@import "variables";
-
 @mixin spacing-utilities($property) {
   @each $size, $value in (
           "0": 0,
@@ -31,10 +29,6 @@
 
 @include spacing-utilities(m); // Margin utilities
 @include spacing-utilities(p); // Padding utilities
-
-
-@include spacing-utilities(m);
-@include spacing-utilities(p);
 
 // Text Alignment
 .text-center {
