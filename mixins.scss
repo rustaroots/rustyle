@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "vars";
+
+// Mixin for grid column width
+@mixin grid-col($span, $columns: vars.$grid-columns) {
+  width: calc($span / $columns) * 100%;
+}
+
+// Mixin for responsive breakpoints
+@mixin respond($breakpoint) {
+  @media (min-width: map.get(vars.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// Hover and Focus States
+@mixin hover-focus-colors {
+  @each $name, $value in vars.$colors {
+    .hover\:text-#{$name}:hover {
+      color: $value !important;
+    }
+    .hover\:bg-#{$name}:hover {
+      background-color: $value !important;
+    }
+    .focus\:border-#{$name}:focus {
+      border-color: $value !important;
+    }
+  }
+}
+
+@mixin generate-color-utilities($type) {
+  @each $name, $value in vars.$colors {
+    .#{$type}-#{$name} {
+      @if $type == "text" {
+        color: $value !important;
+      } @else if $type == "bg" {
+        background-color: $value !important;
+      } @else if $type == "border" {
+        border-color: $value !important;
+      }
+    }
+  }
+}
+
+@include generate-color-utilities(text);
+@include generate-color-utilities(bg);
+@include generate-color-utilities(border);
+@include hover-focus-colors;

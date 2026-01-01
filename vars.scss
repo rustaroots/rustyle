@@ -1,0 +1,36 @@
+// Grid System Variables
+$grid-columns: 12; // Total number of columns
+$gutter-width: 16px; // Space between columns
+$grid-gap : 10px;
+
+// Breakpoints
+$breakpoints: (
+        xs: 360px,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+
+$colors: (
+        "primary": #007bff,
+        "secondary": #6c757d,
+        "success": #28a745,
+        "danger": #dc3545,
+        "warning": #ffc107,
+        "info": #17a2b8,
+        "light": #f8f9fa,
+        "dark": #343a40,
+        "gray-100": #f8f9fa,
+        "gray-200": #e9ecef,
+        "gray-300": #dee2e6,
+        "gray-400": #ced4da,
+        "gray-500": #adb5bd,
+        "gray-600": #6c757d,
+        "gray-700": #495057,
+        "gray-800": #343a40,
+        "gray-900": #212529
+);
+
+// Spacing
+$spacing-unit: 8px;
